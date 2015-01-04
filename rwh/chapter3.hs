@@ -102,7 +102,7 @@ anglePointOrdering (px,py) (x1,y1) (x2,y2)
 
 acceptPoint :: [Point] -> [Point]
 acceptPoint (a:(b:(c:xs)))
-  | whichTurn a b c == RightTurn = acceptPoint (b:(c:xs))
+  | whichTurn a b c == RightTurn = acceptPoint (a:(c:xs))
   | otherwise                    = b:(acceptPoint (b:(c:xs)))
 acceptPoint _ = []
 -- (this is the filtering mechanism for the Graham Scan algorithm)
